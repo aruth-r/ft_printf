@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aruth-ra <aruth-ra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 19:09:00 by aruth-ra          #+#    #+#             */
 /*   Updated: 2021/08/07 15:19:40 by aruth-ra         ###   ########.fr       */
