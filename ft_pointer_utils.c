@@ -46,7 +46,7 @@ static void	make_str(unsigned long n, char *base, unsigned long p, char **tmp)
 
 	cont = 0;
 	num = n;
-	while (p> 0)
+	while (p > 0)
 	{
 		*(*tmp + cont) = base[num / p];
 		num = num % p;
