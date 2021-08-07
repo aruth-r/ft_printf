@@ -46,7 +46,7 @@ static size_t	ft_nbrlen(int n)
 	if (n < 0)
 	{
 		i++;
-		nb = n * -1;
+		nb = n * - 1;
 	}
 	else
 		nb = n;
