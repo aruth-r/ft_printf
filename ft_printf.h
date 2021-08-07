@@ -18,7 +18,7 @@
 # include <unistd.h>
 
 int		ft_printchar(va_list args);
-int 	ft_printstring(va_list args);
+int		ft_printstring(va_list args);
 int		ft_printnum(va_list args);
 int		ft_printuns(va_list args);
 int		ft_printhex(va_list args, char str);
