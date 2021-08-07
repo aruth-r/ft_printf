@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_unsigned_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aruth-ra <aruth-ra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aruth-ra <aruth-ra@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 23:16:16 by aruth-ra          #+#    #+#             */
 /*   Updated: 2021/08/06 22:26:37 by aruth-ra         ###   ########.fr       */
