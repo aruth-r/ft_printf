@@ -6,15 +6,15 @@
 /*   By: aruth-ra <aruth-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 23:16:16 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/08/06 21:49:36 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/08/06 22:29:13 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	check_base(char *base)
+static int	check_hex(char *base)
 {
-	char	vetor[ft_strlen(base) + 1];
+	char	vetor[17];
 	int		i;
 	int		j;
 
@@ -39,37 +39,38 @@ static int	check_base(char *base)
 	return (1);
 }
 
-static void	make_str(unsigned long n, char *base, unsigned long pot, char **temp)
+static void	make_str(unsigned long n, char *base, unsigned long p, char **tmp)
 {
 	unsigned long	num;
 	unsigned long	cont;
 
 	cont = 0;
 	num = n;
-	while (pot > 0)
+	while (p> 0)
 	{
-		*(*temp + cont) = base[num / pot];
-		num = num % pot;
-		pot /= (unsigned long)ft_strlen(base);
+		*(*tmp + cont) = base[num / p];
+		num = num % p;
+		p /= (unsigned long)ft_strlen(base);
 		cont++;
 	}
 }
 
-char		*ft_ltoa_base(unsigned long n, char *base)
+char	*ft_ltoa_base(unsigned long n, char *base)
 {
 	unsigned long	cont;
 	unsigned long	num;
 	unsigned long	pot;
 	char			*temp;
 
-	if (check_base(base))
-		return (NULL);
+	if (check_hex(base))
+		return (0);
 	num = n;
 	cont = 1;
 	while (num >= (unsigned long)ft_strlen(base) && cont++)
 		num /= (unsigned long)ft_strlen(base);
-	if (!(temp = malloc((cont + 1) * sizeof(char))))
-		return (NULL);
+	temp = malloc((cont + 1) * sizeof(char));
+	if (!temp)
+		return (0);
 	*(temp + cont) = '\0';
 	pot = 1;
 	while (--cont)

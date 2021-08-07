@@ -6,7 +6,7 @@
 /*   By: aruth-ra <aruth-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 19:09:00 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/08/06 21:50:37 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/08/06 22:30:46 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_printchar(va_list args, int k)
 {	
-	int arg;
-	int i;
+	int	arg;
+	int	i;
 
 	arg = 0;
 	i = 1;
@@ -30,8 +30,8 @@ int	ft_printchar(va_list args, int k)
 
 int	ft_printstring(va_list args, int k)
 {
-	char *arg;
-	int i;
+	char	*arg;
+	int		i;
 
 	arg = 0;
 	i = 1;
@@ -40,7 +40,7 @@ int	ft_printstring(va_list args, int k)
 		arg = va_arg(args, char *);
 		i++;
 	}
-		if (arg == 0)
+	if (arg == 0)
 	{
 		write(1, "(null)", 6);
 		return (6);
@@ -51,9 +51,9 @@ int	ft_printstring(va_list args, int k)
 
 int	ft_printnum(va_list args, int k)
 {
-	char *numtostr;
-	int arg;
-	int i;
+	char	*numtostr;
+	int		arg;
+	int		i;
 
 	arg = 0;
 	i = 1;
@@ -70,9 +70,9 @@ int	ft_printnum(va_list args, int k)
 
 int	ft_printuns(va_list args, int k)
 {
-	char *numtostr;
-	unsigned long arg;
-	int i;
+	char			*numtostr;
+	unsigned long	arg;
+	int 			i;
 
 	arg = 0;
 	i = 1;
@@ -89,9 +89,9 @@ int	ft_printuns(va_list args, int k)
 
 int	ft_printhex(va_list args, char str, int k)
 {
-	char *hextostr;
-	unsigned long arg;
-	int i;
+	char			*hextostr;
+	unsigned long	arg;
+	int				i;
 
 	arg = 0;
 	i = 1;

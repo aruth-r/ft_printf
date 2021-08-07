@@ -6,15 +6,15 @@
 /*   By: aruth-ra <aruth-ra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 23:16:16 by aruth-ra          #+#    #+#             */
-/*   Updated: 2021/08/06 21:45:30 by aruth-ra         ###   ########.fr       */
+/*   Updated: 2021/08/06 22:26:37 by aruth-ra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	check_base(char *base)
+static int	check_hex(char *base)
 {
-	char	vetor[ft_strlen(base) + 1];
+	char	vetor[17];
 	int		i;
 	int		j;
 
@@ -55,21 +55,22 @@ static void	make_str(unsigned int n, char *base, unsigned int pot, char **temp)
 	}
 }
 
-char		*ft_utoa_base(unsigned int n, char *base)
+char	*ft_utoa_base(unsigned int n, char *base)
 {
 	unsigned int	cont;
 	unsigned int	num;
 	unsigned int	pot;
 	char			*temp;
 
-	if (check_base(base))
-		return (NULL);
+	if (check_hex(base))
+		return (0);
 	num = n;
 	cont = 1;
 	while (num >= (unsigned int)ft_strlen(base) && cont++)
 		num /= (unsigned int)ft_strlen(base);
-	if (!(temp = malloc((cont + 1) * sizeof(char))))
-		return (NULL);
+	temp = malloc((cont + 1) * sizeof(char));
+	if (!temp)
+		return (0);
 	*(temp + cont) = '\0';
 	pot = 1;
 	while (--cont)
@@ -96,7 +97,7 @@ char	*ft_itoa_u(unsigned int n)
 {
 	char			*itoa;
 	size_t			i;
-	int	nb;
+	int				nb;
 
 	nb = n;
 	itoa = (char *)malloc(ft_nbrlen(n) + 1);
