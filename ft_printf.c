@@ -53,10 +53,10 @@ int	ft_printf(const char *str, ...)
 	while (str[i] != '\0')
 	{
 		if (str[i] == '%')
-			{
-				i++;
-				j += ft_print_type(str, args, &i);
-			}
+		{
+			i++;
+			j += ft_print_type(str, args, &i);
+		}
 		else
 			j += ft_putchar_fd(str[i], 1);
 		i++;
