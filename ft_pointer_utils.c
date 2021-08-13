@@ -12,33 +12,6 @@
 
 #include "ft_printf.h"
 
-static int	check_hex(char *base)
-{
-	char	vetor[17];
-	int		i;
-	int		j;
-
-	if (!(base) || ft_strlen(base) == 1)
-		return (0);
-	i = 0;
-	while (*(base + i++) != '\0')
-		if (*(base + i - 1) || *(base + i - 1) == '+')
-			return (0);
-	i = 0;
-	*(vetor + i) = '\0';
-	while (*(base + i) != '\0')
-	{
-		j = 0;
-		while (*(vetor + j++) != '\0')
-			if (*(base + i) == *(vetor + j - 1))
-				return (0);
-		*(vetor + j) = *(base + i);
-		*(vetor + j + 1) = '\0';
-		i++;
-	}
-	return (1);
-}
-
 static void	make_str(unsigned long n, char *base, unsigned long p, char **tmp)
 {
 	unsigned long	num;
@@ -62,8 +35,6 @@ char	*ft_ltoa_base(unsigned long n, char *base)
 	unsigned long	pot;
 	char			*temp;
 
-	if (check_hex(base))
-		return (0);
 	num = n;
 	cont = 1;
 	while (num >= (unsigned long)ft_strlen(base) && cont++)

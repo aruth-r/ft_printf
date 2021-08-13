@@ -39,42 +39,49 @@ int	ft_printnum(va_list args)
 {
 	char	*numtostr;
 	int		arg;
+	int		i;
 
 	arg = va_arg(args, int);
 	numtostr = ft_itoa(arg);
 	ft_putstr_fd(numtostr, 1);
+	i = ft_strlen(numtostr);
 	free(numtostr);
-	return (ft_strlen(numtostr));
+	return (i);
 }
 
 int	ft_printuns(va_list args)
 {
 	char			*numtostr;
 	unsigned long	arg;
+	int				i;
 
 	arg = va_arg(args, unsigned long);
 	numtostr = ft_utoa_base(arg, "0123456789");
 	ft_putstr_fd(numtostr, 1);
+	i = ft_strlen(numtostr);
 	free(numtostr);
-	return (ft_strlen(numtostr));
+	return (i);
 }
 
 int	ft_printhex(va_list args, char str)
 {
 	char			*hextostr;
 	unsigned long	arg;
+	int				i;
 
 	arg = va_arg(args, unsigned long);
 	if (str == 'x')
 		hextostr = ft_utoa_base(arg, "0123456789abcdef");
 	if (str == 'p')
 	{
-		write(1, "0x", 2);
+		if(arg != 0)
+			write(1, "0x", 2);
 		hextostr = ft_ltoa_base(arg, "0123456789abcdef");
 	}
 	if (str == 'X')
 		hextostr = ft_utoa_base(arg, "0123456789ABCDEF");
 	ft_putstr_fd(hextostr, 1);
+	i = ft_strlen(hextostr);
 	free(hextostr);
-	return (ft_strlen(hextostr));
+	return (i);
 }
