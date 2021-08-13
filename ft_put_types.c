@@ -74,8 +74,7 @@ int	ft_printhex(va_list args, char str)
 		hextostr = ft_utoa_base(arg, "0123456789abcdef");
 	if (str == 'p')
 	{
-		if(arg != 0)
-			write(1, "0x", 2);
+		write(1, "0x", 2);
 		hextostr = ft_ltoa_base(arg, "0123456789abcdef");
 	}
 	if (str == 'X')
